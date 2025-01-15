@@ -11,6 +11,65 @@
     color: #333;
     line-height: 1.6;
   }
+
+ 
+
+nav {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  background-color: #2a2a2a;
+    color: #fff;
+    padding: 0.5rem;
+    
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  text-align: right;
+  justify-content: flex-end; 
+}
+
+nav ul li {
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative; 
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  font-size: large;
+
+
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 2px; 
+  background: #fff; 
+  transition: width 0.3s ease-in-out; 
+}
+
+nav ul li a:hover::after {
+  width: 100%; 
+}
+.logo {
+  margin-right: auto; 
+  font-weight: bolder;
+  font-size: 25px;
+  margin-left: 2rem;
+}
+
+
   
   /* Hero Section */
   .hero {
