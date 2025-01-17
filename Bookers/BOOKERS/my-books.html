@@ -6,6 +6,11 @@
     <title>My Books - Bookers.com</title>
     <link rel="stylesheet" href="css/my-books.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,6 +21,10 @@
                 <li><a href="my-books.html">My Books</a></li>
                 <li><a href="books-available.html">Books Available</a></li>
                 <li><a href="book-listing.html">List a Book</a></li>
+                <li id="login-link"><a href="login.html">Login</a></li>
+                <li id="register-link"><a href="register.html">Register</a></li>
+                <li id="profile-icon" class="hidden"><a href="profile.html">Profile</a></li>
+                <li id="logout-link" class="hidden"><a href="logout.html">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -31,6 +40,27 @@
         <p>&copy; 2024 Bookers.com. All rights reserved.</p>
     </footer>
 
-    <script src="js/my-books.js"></script>
+    <script>
+        // Function to check login status
+        function isLoggedIn() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn'); // Check localStorage for login status
+
+            // Show or hide navbar items based on login status
+            if (isLoggedIn === "true") {
+                document.getElementById('profile-icon').classList.remove('hidden');
+                document.getElementById('logout-link').classList.remove('hidden');
+                document.getElementById('login-link').classList.add('hidden');
+                document.getElementById('register-link').classList.add('hidden');
+            } else {
+                document.getElementById('profile-icon').classList.add('hidden');
+                document.getElementById('logout-link').classList.add('hidden');
+                document.getElementById('login-link').classList.remove('hidden');
+                document.getElementById('register-link').classList.remove('hidden');
+            }
+        }
+
+        // Call the function when the page loads
+        isLoggedIn();
+    </script>
 </body>
 </html>

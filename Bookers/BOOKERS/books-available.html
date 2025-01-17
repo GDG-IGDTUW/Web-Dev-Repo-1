@@ -6,7 +6,11 @@
     <title>Books Available - Bookers.com</title>
     <link rel="stylesheet" href="css/books-available.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,6 +21,11 @@
                 <li><a href="my-books.html">My Books</a></li>
                 <li><a href="books-available.html">Books Available</a></li>
                 <li><a href="book-listing.html">List a Book</a></li>
+                <!-- Added login and register links, and profile/logout hidden by default -->
+                <li id="login-link"><a href="login.html">Login</a></li>
+                <li id="register-link"><a href="register.html">Register</a></li>
+                <li id="profile-icon" class="hidden"><a href="profile.html">Profile</a></li>
+                <li id="logout-link" class="hidden"><a href="logout.html">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -27,19 +36,41 @@
             <!-- Available books will be dynamically added here -->
         </div>
     </section>
-
     
-        <section class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search by book, author or genre name">
-            <button id="searchButton">
-                <i class="fas fa-search"></i> <!-- Font Awesome icon, or replace with an image icon if preferred -->
-            </button>
-        </section>
-        
-   
+    <!-- Search bar section -->
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by book, author or genre name">
+        <button id="searchButton">
+            <i class="fas fa-search"></i> <!-- Font Awesome icon, or replace with an image icon if preferred -->
+        </button>
+    </section>
+
     <footer>
         <p>&copy; 2024 Bookers.com. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Function to check login status
+        function isLoggedIn() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn'); // Check localStorage for login status
+
+            // Show or hide navbar items based on login status
+            if (isLoggedIn === "true") {
+                document.getElementById('profile-icon').classList.remove('hidden');
+                document.getElementById('logout-link').classList.remove('hidden');
+                document.getElementById('login-link').classList.add('hidden');
+                document.getElementById('register-link').classList.add('hidden');
+            } else {
+                document.getElementById('profile-icon').classList.add('hidden');
+                document.getElementById('logout-link').classList.add('hidden');
+                document.getElementById('login-link').classList.remove('hidden');
+                document.getElementById('register-link').classList.remove('hidden');
+            }
+        }
+
+        // Call the function when the page loads
+        isLoggedIn();
+    </script>
 
     <script src="js/books-available.js"></script>
 </body>
