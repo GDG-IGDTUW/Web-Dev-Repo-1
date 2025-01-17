@@ -16,29 +16,141 @@ header {
     padding: 1rem;
 }
 
+n/* Navbar Styling */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+
+.search-bar input {
+    display:flex;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+   
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5.0rem;
+}
+
+.search-bar button {
+    display: flex;
+    background: white;
+    color: #4a0e4e;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #ddd;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+nav ul.active {
+    display: block;
 }
 
 nav ul li {
-    margin-left: 1rem;
+    position: relative;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #6a11cb;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-menu li a {
+    padding: 0.5rem;
+    display: block;
+    border-radius: 5px;
+}
+
+button.hamburger-menu {
+    display: none;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background: #6a11cb;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    button.hamburger-menu {
+        display: block;
+    }
 }
 
 main {

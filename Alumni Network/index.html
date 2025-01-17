@@ -10,15 +10,40 @@
     <header>
         <nav>
             <div class="logo">IGDTUW Alumni</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search here">
+                <button> <i class="fas fa-search"> search</i></button>
+            </div>
+            
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#events">Events</a></li>
+                <li class="dropdown">
+                    <a href="#events">Events</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#upcoming-events"> upcoming events</a></li>
+                        <li><a href="#past-events" > past events </a></li>
+                    </ul>
+                </li>
                 <li><a href="#directory">Directory</a></li>
                 <li><a href="#jobs">Job Board</a></li>
                 <li><a href="#mentorship">Mentorship</a></li>
             </ul>
+
+            <button class="hamburger-menu">
+                <i class="fas fa-bars">  </i>
+            </button>
         </nav>
     </header>
+
+    <script>
+        const hamburger= document.querySelector('.hamburger-menu');
+        const navMenu=document.querySelector('nav ul');
+
+    hamburger.addEventListener( 'click', () => 
+    {
+        navMenu.classList.toggle('active');
+    });
+    </script>
 
     <main>
         <section id="home">
