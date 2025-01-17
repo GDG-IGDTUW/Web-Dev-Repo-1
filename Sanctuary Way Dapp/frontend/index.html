@@ -13,8 +13,8 @@
 
     <!-- Navigation section -->
     <section id="header">
-      <nav class="navbar navbar-expand-lg bg-white fixed-top">
-        <div class="container">
+      <nav class="navbar navbar-expand-lg fix-navbar">
+        <div class="container" style=>
           <a class="navbar-brand" href="#">
             <img width="50px" height="50px" decoding="async" src="images/logo.jpg" class="img-fluid">
           </a>
@@ -104,7 +104,7 @@
       <div class="offers">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4">
+            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4" style="z-index: -1;">
               <a href="#">
                 <div class="offer-box text-center position-relative">
                   <div class="offer-inner">
@@ -124,7 +124,7 @@
               </a>
             </div>
            
-            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4 d-flex flex-column justify-content-between">
+            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4 d-flex flex-column justify-content-between" style="z-index: -1;">
               <a href="#">
                 <div class="offer-box text-center position-relative mb-4 mb-sm-0 mb-lg-0">
                   <div class="offer-inner">
@@ -143,7 +143,7 @@
                 </div>
               </a>
               <a href="#">
-                <div class="offer-box text-center position-relative">
+                <div class="offer-box text-center position-relative" style="z-index: -1;">
                   <div class="offer-inner">
                     <div class="offer-image position-relative overflow-hidden">
                       <img decoding="async" src="images/img8.jpg" alt="Offers" class="img-fluid">
@@ -162,7 +162,7 @@
             </div>
 
             
-            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4">
+            <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4" style="z-index: -1;">
               <a href="#">
                 <div class="offer-box text-center position-relative">
                   <div class="offer-inner">
@@ -192,7 +192,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="headline text-center mb-5">
-              <h2 class="pb-3 position-relative d-inline-block">ABOUT</h2>
+              <h2 class="pb-3 d-inline-block position-relative">ABOUT</h2>
             </div>
           </div>
 
@@ -491,19 +491,24 @@
       </div>
     </div>
   </footer>
-   
+  
+
+
 <!-- Scroll Backt To Top --> 
 <div id="scrollUp" title="Scroll To Top">
   <a href="#home"><span class="ti-arrow-up fs-4 text-white"></span></a>
 </div>
+
+<div class="bpw-container"></div>
+
+
+
 <!-- Bootstrap js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
 
 <!-- app JS -->
 <script src="app.js"></script>
 <script src="back.js"></script>
-
-
 
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script>
@@ -523,6 +528,8 @@
       "themeColor": "#2563eb",
       "allowedOrigins": []
   });
+
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/{version}/stellar-sdk.js"></script>
 

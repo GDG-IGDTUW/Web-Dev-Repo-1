@@ -50,9 +50,16 @@ p{
 
 
 /* Navigation CSS */ 
-#header .fixed-top{
-    box-shadow: 0 0.125rem 0.675rem rgb(0 0 0 / 5%);
+
+
+#header .fix-navbar{
+    position: fixed;
+  width: 100%;
+  background-color: #f0f0f0;
+  top: 0;
+  z-index: 1;
 }
+
 #header .navbar-nav .nav-item .nav-link{
     color:var(--text-black);
     padding:0.5rem 1rem;

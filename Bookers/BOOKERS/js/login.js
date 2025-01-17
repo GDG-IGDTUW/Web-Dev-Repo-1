@@ -1,9 +1,15 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Add validation and backend call here
-    alert('Logged in successfully!');
-    window.location.href = "my-books.html";
-});
+const res = document.getElementById('login-form').addEventListener('submit',
+    function (event) {
+        event.preventDefault();
+        // Add validation and backend call here
+        alert('Logged in successfully!');
+        // console.log(res);
+
+      
+        localStorage.setItem('isLoggedIn', true);
+
+        window.location.href = "my-books.html";
+    });
 
 // Google login functionality
 function onGoogleSignIn(googleUser) {
@@ -14,4 +20,6 @@ function onGoogleSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail());
 
     // Logic to authenticate the user using the Google ID token and backend
+    // Once authenticated, you can set login status as true
+    localStorage.setItem('isLoggedIn', true);
 }

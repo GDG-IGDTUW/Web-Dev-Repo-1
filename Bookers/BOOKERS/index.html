@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookers.com - Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/massively-theme/1.0.0/massively.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">Bookers.com</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="profile.html" id="profile-icon" class="hidden">Profile</a></li>
-                
+                <li id="mybooks-link" class="hidden"><a href="my-books.html">MyBooks</a></li>
+                <li id="books-available-link" class="hidden"><a href="books-available.html">Books Available</a></li>
+                <li id="list-book-link" class="hidden"><a href="book-listing.html">List a Book</a></li>
+                <li id="login-link"><a href="login.html">Login</a></li>
+                <li id="register-link"><a href="register.html">Register</a></li>
+                <li id="profile-icon" class="hidden"><a href="profile.html">Profile</a></li>
+                <li id="logout-link" class="hidden"><a href="logout.html">Logout</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="hero">
         <div class="hero-content">
             <h1 id="typewriter-text">Welcome to Bookers.com</h1>
             <h2>Your online Book Trading Platform For All Your Inline Book Needs</h2>
             <h3>Trade your books effortlessly and connect with fellow book lovers.</h3><br>
-            <a href="login.html" class="btn">Get Started</a>
+            <a href="login.html" id="get-started-btn" class="btn">Get Started</a>
         </div>
     </section>
 
@@ -34,6 +44,48 @@
         <p>&copy; 2024 Bookers.com. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Function to check login status
+        function isLoggedIn() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const getStartedBtn = document.getElementById('get-started-btn'); // Get the button by ID
+
+            if (isLoggedIn === "true") {
+                document.getElementById('profile-icon').classList.remove('hidden');
+                document.getElementById('logout-link').classList.remove('hidden');
+                document.getElementById('mybooks-link').classList.remove('hidden');
+                document.getElementById('books-available-link').classList.remove('hidden');
+                document.getElementById('list-book-link').classList.remove('hidden');
+                document.getElementById('login-link').classList.add('hidden');
+                document.getElementById('register-link').classList.add('hidden');
+
+                // Changed the "Get Started" button behaviour
+                getStartedBtn.classList.remove('hidden');
+                getStartedBtn.href = 'books-available.html';
+            } else {
+                document.getElementById('profile-icon').classList.add('hidden');
+                document.getElementById('logout-link').classList.add('hidden');
+                document.getElementById('mybooks-link').classList.add('hidden');
+                document.getElementById('books-available-link').classList.add('hidden');
+                document.getElementById('list-book-link').classList.add('hidden');
+                document.getElementById('login-link').classList.remove('hidden');
+                document.getElementById('register-link').classList.remove('hidden');
+
+                // Ensure the Get Started button is visible and links to login page
+                getStartedBtn.classList.remove('hidden');
+                getStartedBtn.href = 'login.html'; // Set link to login page
+            }
+        }
+
+        // Call the function when the page loads
+        isLoggedIn();
+
+        // Logout event listener
+        document.getElementById('logout-link').addEventListener('click', function () {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
+
 </html>
