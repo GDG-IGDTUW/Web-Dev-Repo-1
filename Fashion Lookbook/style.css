@@ -17,11 +17,12 @@
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.jpg') no-repeat center/cover;
     color: #fff;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
   }
   
   .hero h1 {
     font-size: 3rem;
+    padding-top: -2px;
   }
   
   .hero p {
