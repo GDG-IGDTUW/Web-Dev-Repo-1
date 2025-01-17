@@ -5,43 +5,59 @@ body {
     padding: 0;
 }
 
-/* Navigation */
-nav {
+/* Header */
+header {
+    background-color: #1e1d1d;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border: 2px solid #f0a500;
     font-family: 'Arial, sans-serif';
+}
+header > nav{
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #1e1d1d;
-    padding: .5rem;
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: wavy;
+    flex-wrap: wrap;
 }
-
-nav .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: wavy;
-}
-
-nav ul {
+.nav-links{
     list-style: none;
     display: flex;
+    gap: 1rem;
+    color: #fff;
 }
-
-nav ul li {
-    margin-left: 1.5rem;
-}
-
-nav ul li a {
-    color: #f9f9f9;
+.nav-links a{
     text-decoration: none;
-    font-size: 1rem;
+    color: inherit;
 }
-
-nav ul li a:hover {
+.nav-links a:hover{
     color: #ebc36b;
+}
+.logo{
+    margin: 0;
+    font-size: 2rem;
+    text-decoration: wavy;
+}
+@media screen and (max-width: 470px){
+    .logo{
+        font-size: 1.8rem;
+    }
+    header > nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a{
+        font-size: 1.2rem;
+    }
+    .hero-content{
+        margin: 0 0.8rem;
+    }
+    #typewriter-text{
+        font-size: 2rem;
+    }
 }
 
 /* Hero Section */
@@ -54,6 +70,7 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     color: #fff;
+    border: 2px solid #f0a500;
 }
 
 .hero::before {
@@ -70,6 +87,7 @@ nav ul li a:hover {
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 100%;
 }
 
 .hero h1 {
@@ -108,7 +126,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: fixed;
     width: 100%;
     bottom: 0;

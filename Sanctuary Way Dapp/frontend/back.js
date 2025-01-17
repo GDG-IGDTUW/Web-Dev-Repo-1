@@ -1,4 +1,4 @@
-document.getElementById('transferForm').addEventListener('submit', async function(event) {
+document.getElementById('transferForm').addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const recipient = document.getElementById('recipient').value;
@@ -10,7 +10,7 @@ document.getElementById('transferForm').addEventListener('submit', async functio
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ recipient: recipient, amount: amount }),
+            body: JSON.stringify({ recipient, amount }),
         });
 
         const data = await response.json();
@@ -29,7 +29,7 @@ document.getElementById('transferForm').addEventListener('submit', async functio
     }
 });
 
-async function displayTokenInformation() {
+const displayTokenInformation = async () => {
     try {
         const response = await fetch('http://localhost:3000/token-info');
         const data = await response.json();
