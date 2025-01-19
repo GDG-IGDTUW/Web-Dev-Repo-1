@@ -82,9 +82,40 @@ button:hover {
 }
 
 .card {
-    border: 1px solid #ddd;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(45deg, #ff6f61, #de4463);
+}
+
+.card:nth-child(2n) {
+    background: linear-gradient(45deg, #36d1dc, #5b86e5);
+}
+
+.card:nth-child(3n) {
+    background: linear-gradient(45deg, #f7971e, #ffd200);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.details.hidden {
+    display: none;
+}
+
+.card.expanded .details {
+    display: block;
 }
 
 footer {
