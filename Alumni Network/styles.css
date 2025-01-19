@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #4a0e4e;
+    background-image: linear-gradient(#722A7A, #4A0E4E);
     color: #fff;
     padding: 1rem;
 }
@@ -25,6 +26,13 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: Mulish;
+}
+
+.nav-links{
+    font-family: Mulish;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 nav ul {
