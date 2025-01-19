@@ -1,4 +1,14 @@
-window.onload = function () {
+ <script>
+    function filterBlogs(category) {
+      const blogs = document.querySelectorAll('.blog-post');
+      blogs.forEach(blog => {
+        if (category === 'all' || blog.getAttribute('data-category') === category) {
+          blog.style.display = 'block';
+        } else {
+          blog.style.display = 'none';
+        }
+      });
+    window.onload = function () {
     const savedBlogs = JSON.parse(localStorage.getItem('blogPosts')) || [];
     const savedPostsContainer = document.getElementById('saved-posts');
   
@@ -46,4 +56,4 @@ window.onload = function () {
       });
     }
   };
-  
+  </script>
